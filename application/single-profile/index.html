@@ -20,52 +20,56 @@
         <div class="justify-content-center jimu-primary-loading"></div>
     </div>    
     <main id="main" class="hidden">
-        <nav class="relative max-h-[60px] p-3 flex justify-end sm:justify-between items-center shadow-md bg-white">
-            <h3 class="text-2xl font-semibold hidden sm:block">Welcome, <span id="username-span" class="text-blue-500"></span> </h3>
-    
-            <!-- Account Icon -->
-            <div class="h-full flex sm:w-fit w-full sm:!flex-row flex-row-reverse sm:justify-end justify-between  items-center gap-5" >
-                
-                <a href="/application">
-                    <img src="/assets/icons/homepage-icon.png" alt="home" class="w-[20px] cursor-pointer">
-                </a>
-    
-                <div
-                    class="w-[40px] h-[40px] rounded-full bg-cover bg-center cursor-pointer" id="account-icon">
-                </div>
-    
-                <div id="account-container" class="z-50 min-w-[200px] max-w-[90%] p-4 hidden flex-col items-start gap-2 absolute top-[102%] right-3 rounded-md text-sm text-gray-600 bg-white shadow-lg">
-                    <a href="/application/single-profile/" class="w-full p-2 flex items-center gap-3 border-b-2 cursor-pointer">
-                        <div
-                            class="w-[40px] h-[40px] rounded-full bg-cover bg-center cursor-pointer" id="account-icon-2">
-                        </div>
-                        <h5 class="font-medium text-base" id="acc-username"></h5>
+
+        
+        <div class="!sticky top-0 left-0">
+            <nav class="relative max-h-[60px] p-3 flex justify-end sm:justify-between items-center shadow-md bg-white">
+                <h3 class="text-2xl font-semibold hidden sm:block">Welcome, <span id="username-span" class="text-blue-500"></span> </h3>
+        
+                <!-- Account Icon -->
+                <div class="h-full flex sm:w-fit w-full sm:!flex-row flex-row-reverse sm:justify-end justify-between  items-center gap-5" >
+                    
+                    <a href="/application">
+                        <img src="/assets/icons/homepage-icon.png" alt="home" class="w-[20px] cursor-pointer">
                     </a>
-                    <div class="flex flex-col items-start gap-4 my-4 w-full">
-                        <a href="/application/account-setting" class="w-full flex gap-3 items-center transition cursor-pointer hover:-translate-y-0.5">
-                            <img src="/assets/icons/settings-icon.png" alt="" class="w-[20px] h-auto">
-                            <p>Account Setting</p>
+        
+                    <div
+                        class="w-[40px] h-[40px] rounded-full bg-cover bg-center cursor-pointer" id="account-icon">
+                    </div>
+        
+                    <div id="account-container" class="z-50 min-w-[200px] max-w-[90%] p-4 hidden flex-col items-start gap-2 absolute top-[102%] right-3 rounded-md text-sm text-gray-600 bg-white shadow-lg">
+                        <a href="/application/single-profile/" class="w-full p-2 flex items-center gap-3 border-b-2 cursor-pointer">
+                            <div
+                                class="w-[40px] h-[40px] rounded-full bg-cover bg-center cursor-pointer" id="account-icon-2">
+                            </div>
+                            <h5 class="font-medium text-base" id="acc-username"></h5>
                         </a>
-                        <a href="/userAuthentication/forgot-password" class="w-full flex gap-3 items-center transition cursor-pointer hover:-translate-y-0.5">
-                            <img src="/assets/icons/reset-password-icon.png" alt="" class="w-[20px] h-auto">
-                            <p class="">Reset Password</p>
-                        </a >
-                        <a href="/userAuthentication/login" class="w-full flex gap-3 items-center transition cursor-pointer hover:-translate-y-0.5">
-                            <img src="/assets/icons/switch-account.png" alt="" class="w-[20px] h-auto">
-                            <p class="">Switch Account</p>
-                        </a >
-                        <a href="/userAuthentication/signup" class="w-full flex gap-3 items-center transition cursor-pointer hover:-translate-y-0.5">
-                            <img src="/assets/icons/add-account.png" alt="" class="w-[17px] h-auto mr-1">
-                            <p class="">Add Account</p>
-                        </a >
-                        <div id="logout-handler" class="w-full flex gap-3 items-center transition cursor-pointer hover:-translate-y-0.5">
-                            <img src="/assets/icons/logout-icon.png" alt="" class="w-[17px] h-auto">
-                            <button class="" >Logout</button>
+                        <div class="flex flex-col items-start gap-4 my-4 w-full">
+                            <a href="/application/account-setting" class="w-full flex gap-3 items-center transition cursor-pointer hover:-translate-y-0.5">
+                                <img src="/assets/icons/settings-icon.png" alt="" class="w-[20px] h-auto">
+                                <p>Account Setting</p>
+                            </a>
+                            <a href="/userAuthentication/forgot-password" class="w-full flex gap-3 items-center transition cursor-pointer hover:-translate-y-0.5">
+                                <img src="/assets/icons/reset-password-icon.png" alt="" class="w-[20px] h-auto">
+                                <p class="">Reset Password</p>
+                            </a >
+                            <a href="/userAuthentication/login" class="w-full flex gap-3 items-center transition cursor-pointer hover:-translate-y-0.5">
+                                <img src="/assets/icons/switch-account.png" alt="" class="w-[20px] h-auto">
+                                <p class="">Switch Account</p>
+                            </a >
+                            <a href="/userAuthentication/signup" class="w-full flex gap-3 items-center transition cursor-pointer hover:-translate-y-0.5">
+                                <img src="/assets/icons/add-account.png" alt="" class="w-[17px] h-auto mr-1">
+                                <p class="">Add Account</p>
+                            </a >
+                            <div id="logout-handler" class="w-full flex gap-3 items-center transition cursor-pointer hover:-translate-y-0.5">
+                                <img src="/assets/icons/logout-icon.png" alt="" class="w-[17px] h-auto">
+                                <button class="" >Logout</button>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </nav>
+            </nav>
+        </div>
 
         <section class="flex flex-col items-center w-full px-2">
 
