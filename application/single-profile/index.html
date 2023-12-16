@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <!-- bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <!-- tailwind cdn -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- fontawesome cdn -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- loader.css -->
+    <link rel="stylesheet" href="/loader.css">
+    
+    <title id="page-title"></title>
+</head>
+<body class="bg-gray-200 min-h-[100vh]">
+    <div class="loader" id="loader">
+        <div class="justify-content-center jimu-primary-loading"></div>
+    </div>    <main id="main" class="hidden">
+        <nav class="relative max-h-[60px] p-3 flex justify-between items-center shadow-md bg-white">
+            
+            <h3 class="text-2xl font-semibold">Welcome, <span id="username-span" class="text-blue-500"></span> </h3>
+    
+            <!-- Account Icon -->
+            <div class="h-full flex items-center gap-5">
+
+                <a href="/application">
+                    <img src="/assets/icons/homepage-icon.png" alt="home" class="w-[20px] cursor-pointer">
+                </a>
+
+                <div
+                    class="w-[40px] h-[40px] rounded-full bg-cover bg-center cursor-pointer" id="account-icon">
+                </div>
+                <div id="account-container" class="z-50 min-w-[200px] max-w-[90%] p-4 hidden flex-col items-start gap-2 absolute top-[102%] right-3 rounded-md text-sm text-gray-600 bg-white shadow-lg">
+                    <a href="/application/single-profile/" class="w-full p-2 flex items-center gap-3 border-b-2 cursor-pointer">
+                        <div
+                            class="w-[40px] h-[40px] rounded-full bg-cover bg-center cursor-pointer" id="account-icon-2">
+                        </div>
+                        <h5 class="font-medium text-base" id="acc-username"></h5>
+                    </a>
+                    <div class="flex flex-col items-start gap-4 my-4 w-full">
+                        <a href="/application/account-setting" class="w-full flex gap-3 items-center transition cursor-pointer hover:-translate-y-0.5">
+                            <img src="/assets/icons/settings-icon.png" alt="" class="w-[20px] h-auto">
+                            <p>Account Setting</p>
+                        </a>
+                        <a href="/userAuthentication/forgot-password" class="w-full flex gap-3 items-center transition cursor-pointer hover:-translate-y-0.5">
+                            <img src="/assets/icons/reset-password-icon.png" alt="" class="w-[20px] h-auto">
+                            <p class="">Reset Password</p>
+                        </a >
+                        <a href="/userAuthentication/login" class="w-full flex gap-3 items-center transition cursor-pointer hover:-translate-y-0.5">
+                            <img src="/assets/icons/switch-account.png" alt="" class="w-[20px] h-auto">
+                            <p class="">Switch Account</p>
+                        </a >
+                        <a href="/userAuthentication/signup" class="w-full flex gap-3 items-center transition cursor-pointer hover:-translate-y-0.5">
+                            <img src="/assets/icons/add-account.png" alt="" class="w-[17px] h-auto mr-1">
+                            <p class="">Add Account</p>
+                        </a >
+                        <div id="logout-handler" class="w-full flex gap-3 items-center transition cursor-pointer hover:-translate-y-0.5">
+                            <img src="/assets/icons/logout-icon.png" alt="" class="w-[17px] h-auto">
+                            <button class="" >Logout</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <section class="flex flex-col items-center w-full px-2">
+
+            <div class="max-w-[800px] w-full">
+
+                <section class="w-full">
+                    <div class="w-full">
+                        <div
+                            class="w-full h-[30vh] sm:h-[50vh] bg-cover bg-center cursor-pointer rounded-b-lg" id="main-profile-image">
+                        </div>
+                        <div class="fixed w-full h-[100vh] !top-0 left-0 flex items-center justify-center transition-transform duration-100 ease-linear" id="full-profile-container">
+                            <img class=" w-[95%] sm:h-[80%] sm:w-auto  rounded" alt="" id="main-profile-image-full"> 
+                        </div>
+                    </div>
+                </section>
+
+                <section class="grid sm:grid-cols-5 gap-2 my-3">
+                    
+                    <div class="sm:col-span-2 md:w-auto !h-fit bg-white shadow-md rounded-lg p-3">
+
+                        <div class="sm:!text-start max-[400px]:!text-start !text-center">
+                            <h4 class="font-semibold mb-2">Intro</h4>
+                            <p class="text-sm" id="user-bio"></p>
+                            <a href="/application/account-setting/">
+                                <button class="w-full py-2 my-2 text-sm rounded bg-gray-200 hover:bg-gray-300 active:scale-[0.9] transition">Edit Bio</button>
+                            </a>
+                        </div>
+
+                        <div class="flex flex-col gap-2 my-3">
+                            <div>
+                                <i class="far fa-envelope mr-2"></i>
+                                <a id="user-email-sidebar" class="text-blue-500"></a>
+                            </div>
+    
+                            <div>
+                                <i class="fas fa-map-marker-alt mr-2"></i>
+                                <span id="user-address-sidebar"></span>
+                            </div>
+                         
+                            <div>
+                                <i class="fa fa-user-graduate mr-2"></i>
+                                <span id="user-institute-sidebar"></span>
+                            </div>
+    
+                            <div>
+                                <i class="fa fa-briefcase mr-2"></i>
+                                <span id="user-work-sidebar"></span>
+                            </div>
+                            
+                            <div>
+                                <i class="fa fa-phone-alt mr-2"></i>
+                                <a id="user-phone-sidebar" class="text-blue-500"></a >
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div id="user-posts-container" class="sm:col-span-3 bg-none rounded-lg w-full flex flex-col items-center gap-2 h-[100vh]  overflow-y-auto">
+
+                    </div>
+                </section>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="./single-profile.js"></script>
+</body>
+</html>
