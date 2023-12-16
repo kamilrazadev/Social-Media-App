@@ -39,7 +39,8 @@
     
     <main id="main" class="hidden">
 
-        <div class="!sticky top-0 left-0">
+        
+        <div class="!sticky top-0 left-0 z-10">
             <nav class="relative max-h-[60px] p-3 flex justify-end sm:justify-between items-center shadow-md bg-white">
                 <h3 class="text-2xl font-semibold hidden sm:block">Welcome, <span id="username-span" class="text-blue-500"></span> </h3>
         
@@ -55,11 +56,11 @@
                     </div>
         
                     <div id="account-container" class="z-50 w-[200px] max-w-[90%] p-4 hidden flex-col items-start gap-2 absolute top-[102%] min-[640px]:right-3 max-[639px]:left-3  rounded-md text-sm text-gray-600 bg-white shadow-lg">
-                        <a href="/application/single-profile/" class="w-full p-2 flex items-center gap-3 border-b-2 cursor-pointer">
+                        <a href="/application/single-profile/" class="w-full p-2 flex items-center border-b-2 cursor-pointer">
                             <div
-                                class="w-[40px] h-[40px] rounded-full bg-cover bg-center cursor-pointer" id="account-icon-2">
+                                class="min-w-[40px] w-[40px] h-[40px] rounded-full bg-cover bg-center cursor-pointer" id="account-icon-2">
                             </div>
-                            <h5 class="font-medium text-base" id="acc-username"></h5>
+                            <h5 class="font-medium text-base ps-2 leading-[15px]" id="acc-username"></h5>
                         </a>
                         <div class="flex flex-col items-start gap-4 my-4 w-full">
                             <a href="/application/account-setting" class="w-full flex gap-3 items-center transition cursor-pointer hover:-translate-y-0.5">
@@ -100,7 +101,7 @@
             </a>
 
             <!-- Button trigger post modal -->
-            <div class="flex flex-col items-center !p-3 w-full bg-white rounded-md" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            <div class="hidden md:flex flex-col items-center !p-3 w-full bg-white rounded-md" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">
                 <div class="!w-full rounded-full px-3 py-2 cursor-pointer bg-gray-100 hover:bg-gray-200 transition text-gray-400">
                     <p>What's in your Mind? </p>
                 </div>    
@@ -160,51 +161,74 @@
             
         </section>
 
-        <section id="posts-container" class="md:col-span-2 flex flex-col items-center max-h-[90vh] overflow-y-auto">
-            <!-- posts here -->
-            <!-- <div class="p-5">
-                <div class="p-5 !w-fit rounded-lg shadow-md bg-white">
-                    <div class="flex gap-3 mb-2">
-                        <div
-                            style="background-image: url(https://images.adsttc.com/media/images/5d44/14fa/284d/d1fd/3a00/003d/large_jpg/eiffel-tower-in-paris-151-medium.jpg?1564742900);"
-                            class="w-[40px] h-[40px] rounded-full bg-cover bg-center">
-                        </div>
 
-                        <div>
-                            <p class="font-semibold">M Kamil Raza</p>
-                            <p class="text-gray-600 text-[12px]">3-10-2023 - 2:00pm</p>
-                        </div>
-                    </div>
-                    <p class="my-2">post description</p>
-                    <img class="w-full h-auto " src="https://images.adsttc.com/media/images/5d44/14fa/284d/d1fd/3a00/003d/large_jpg/eiffel-tower-in-paris-151-medium.jpg?1564742900" alt="post image">
-
-                    <div class="mt-3 flex justify-between">
-                        <div class="flex gap-2">
-                            <i class="fas fa-thumbs-up text-blue-600"></i>
-                            <p class="text-gray-600 text-sm" id="like-counts">0</p>    
-                        </div>
-                        <div class="flex gap-2">
-                            <i class="far fa-comment-dots"></i>
-                            <p class="text-gray-600 text-sm" id="like-counts">0</p>    
-                        </div>
-                    </div>
-
-                    <div class="flex justify-between pt-2 mt-3 px-10 text-xl text-gray-600 border-t-2">
-                        <div class="scale-75 sm:scale-100 flex items-center gap-2 cursor-pointer">
-                            <i class="far fa-thumbs-up"></i>
-                            <p class="text-base">Like</p>
-                        </div>
-                        <div class="scale-75 sm:scale-100 flex items-center gap-2 cursor-pointer">
-                            <i class="far fa-comment-dots"></i>
-                            <p class="text-sm">Comment</p>
-                        </div>
-                        <div class="scale-75 sm:scale-100 flex items-center gap-2 cursor-pointer">
-                            <i class="fas fa-share"></i>
-                            <p class="text-base">Share</p>
-                        </div>
-                    </div>
+        <section class="md:col-span-2 flex flex-col items-center max-h-[90vh] overflow-y-auto">
+            
+            <!-- Button trigger post modal -->
+            <div class="max-w-[600px] w-full p-2">
+                <div class="flex md:hidden flex-col items-center !p-3 w-full bg-white rounded-md" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    <div class="!w-full rounded-full px-3 py-2 cursor-pointer bg-gray-100 hover:bg-gray-200 transition text-gray-400">
+                        <p>What's in your Mind? </p>
+                    </div>    
+                    <div class="mt-3 flex flex-wrap gap-3 text-[13px] font-semibold !text-gray-500">
+                        <span class="flex gap-1 items-center">
+                            <img src="/assets/icons/gallery-icon.png" alt="" class="w-[30px]">
+                            Photo/Video
+                        </span>
+                        <span class="flex gap-1 items-center">
+                            <img src="/assets/icons/feeling-icon.png" alt="" class="w-[25px]">
+                            Feelings/Activities
+                        </span>
+                    </div>            
                 </div>
-            </div>             -->
+            </div>
+
+            <section id="posts-container" >
+                <!-- posts here -->
+                <!-- <div class="p-5">
+                    <div class="p-5 !w-fit rounded-lg shadow-md bg-white">
+                        <div class="flex gap-3 mb-2">
+                            <div
+                                style="background-image: url(https://images.adsttc.com/media/images/5d44/14fa/284d/d1fd/3a00/003d/large_jpg/eiffel-tower-in-paris-151-medium.jpg?1564742900);"
+                                class="w-[40px] h-[40px] rounded-full bg-cover bg-center">
+                            </div>
+    
+                            <div>
+                                <p class="font-semibold">M Kamil Raza</p>
+                                <p class="text-gray-600 text-[12px]">3-10-2023 - 2:00pm</p>
+                            </div>
+                        </div>
+                        <p class="my-2">post description</p>
+                        <img class="w-full h-auto " src="https://images.adsttc.com/media/images/5d44/14fa/284d/d1fd/3a00/003d/large_jpg/eiffel-tower-in-paris-151-medium.jpg?1564742900" alt="post image">
+    
+                        <div class="mt-3 flex justify-between">
+                            <div class="flex gap-2">
+                                <i class="fas fa-thumbs-up text-blue-600"></i>
+                                <p class="text-gray-600 text-sm" id="like-counts">0</p>    
+                            </div>
+                            <div class="flex gap-2">
+                                <i class="far fa-comment-dots"></i>
+                                <p class="text-gray-600 text-sm" id="like-counts">0</p>    
+                            </div>
+                        </div>
+    
+                        <div class="flex justify-between pt-2 mt-3 px-10 text-xl text-gray-600 border-t-2">
+                            <div class="scale-75 sm:scale-100 flex items-center gap-2 cursor-pointer">
+                                <i class="far fa-thumbs-up"></i>
+                                <p class="text-base">Like</p>
+                            </div>
+                            <div class="scale-75 sm:scale-100 flex items-center gap-2 cursor-pointer">
+                                <i class="far fa-comment-dots"></i>
+                                <p class="text-sm">Comment</p>
+                            </div>
+                            <div class="scale-75 sm:scale-100 flex items-center gap-2 cursor-pointer">
+                                <i class="fas fa-share"></i>
+                                <p class="text-base">Share</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>             -->
+            </section>
         </section>
     </section>
 
