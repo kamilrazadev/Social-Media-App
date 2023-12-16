@@ -17,7 +17,7 @@
     </div>
     <main id="main">
 
-        <a href="/application" class="justify-content-start align-items-center gap-3 p-3 text-decoration-none" style="width: 100%;" id="account-bar">
+        <a href="/application" class="p-3 w-fit justify-content-start align-items-center gap-3 text-decoration-none" id="account-bar">
             <div
                 class="w-[40px] h-[40px] rounded-full bg-cover bg-center cursor-pointer" id="account-icon">
             </div>
@@ -26,20 +26,22 @@
 
         <!-- Account setting -->
         <section class="w-full min-h-[90vh] flex items-center justify-center">
-            <div class="flex flex-col gap-4 min-w-[350px] text-sm">
+            <div class="px-2 flex flex-col items-center gap-4 w-[350px] text-sm">
                 <div class="w-full flex flex-col items-center justify-center gap-3">
                     <div
                         class="w-[130px] h-[130px] rounded-full bg-cover bg-center cursor-pointer" id="profile-image">
                     </div>
                     <button id="update-profile-btn" class="p-2 border-2 rounded transition active:bg-gray-200 hover:shadow-md" onclick="showprofileImageInput()">Update Profile Image</button>
                 </div>
+
                 <div>
                     <div class="gap-2" id="profile-image-input">
                         <input class="form-control" type="text" placeholder="add an image link">
                         <button class="btn btn-info text-white" onclick="closeProfileImageInput()">Close</button>
                     </div>
                 </div>
-                <div>
+
+                <div class="w-full">
                     <label for="username" class="mb-2">Full Name:</label>
                     <div class="flex gap-2">
                         <input class="form-control" type="text" id="username">
@@ -47,42 +49,42 @@
                     </div>
                 </div>
 
-                <div>
+                <div class="w-full">
                     <label for="email" class="mb-2">Email:</label>
                     <div class="flex">
                         <input class="form-control" type="email" id="email" disabled>
                     </div>
                 </div>
 
-                <div>
+                <div class="w-full">
                     <label for="bio" class="mb-2">Add Bio:</label>
                     <div class="flex">
                         <input class="form-control" type="text" id="bio" placeholder="write something about you...">
                     </div>
                 </div>
 
-                <div>
+                <div class="w-full">
                     <label for="address" class="mb-2">Your Address:</label>
                     <div class="flex">
                         <input class="form-control" type="text" id="address" placeholder="Your city and country">
                     </div>
                 </div>
 
-                <div>
+                <div class="w-full">
                     <label for="institute" class="mb-2">Educational Institute:</label>
                     <div class="flex">
                         <input class="form-control" type="text" id="institute" placeholder="Your school name">
                     </div>
                 </div>
 
-                <div>
+                <div class="w-full">
                     <label for="work" class="mb-2">Work:</label>
                     <div class="flex">
                         <input class="form-control" type="text" id="work" placeholder="Add Work Space">
                     </div>
                 </div>
 
-                <div>
+                <div class="w-full">
                     <label for="phone" class="mb-2">Phone:</label>
                     <div class="flex">
                         <input class="form-control" type="text" id="phone" placeholder="Your phone number">

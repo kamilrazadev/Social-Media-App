@@ -223,7 +223,7 @@ setAllPosts();
 const postDateTime = () => {
   const date = new Date();
 
-  const postDate = [date.getDate(), date.getMonth(), date.getFullYear()];
+  const postDate = [date.getDate(), date.getMonth() + 1, date.getFullYear()];
   const postDateString = postDate.join(" / ");
 
   const postTime = [

@@ -105,13 +105,12 @@ const updateAccountDetails = () => {
 
   if (
     username.value == currentUser.username &&
-    profileImageInput.value == "" &&
-    bio.value == "" &&
-    city.value == "" &&
-    country.value == "" &&
-    institute.value == "" &&
-    work.value == "" &&
-    phone.value == ""
+    profileImageInput.value == currentUser.profileImage &&
+    bio.value == currentUser.bio &&
+    address.value == currentUser.address &&
+    institute.value == currentUser.institute &&
+    work.value == currentUser.work &&
+    phone.value == currentUser.phone
   ) {
     errorMessage.innerText = "Nothing to Update";
     setTimeout(() => {
@@ -141,8 +140,6 @@ const updateAccountDetails = () => {
   localStorage.setItem("LoggedInUser", JSON.stringify(userToUpdate));
 
   localStorage.setItem("users", JSON.stringify(allUsers));
-
-  alert("Details updated successfully");
 
   window.location.href = "/application";
 };
