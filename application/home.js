@@ -3,13 +3,13 @@
 const mainSection = document.getElementById("main");
 const loader = document.getElementById("loader");
 
-mainSection.classList.add("d-none");
+mainSection.classList.add("hidden");
 
 window.onload = () => {
   setTimeout(() => {
     loader.style.display = "none";
-    mainSection.classList.remove("d-none");
-    mainSection.classList.add("d-block");
+    mainSection.classList.remove("hidden");
+    mainSection.classList.add("block");
   }, 1000);
 };
 
@@ -128,6 +128,7 @@ const setAllPosts = () => {
     postsContainer.style.color = "grey";
     postsContainer.innerHTML = "<br/>No Post Available";
   } else {
+    allPosts.reverse();
     postsContainer.innerHTML = "";
     allPosts.forEach((post) => {
       postsContainer.innerHTML += `
