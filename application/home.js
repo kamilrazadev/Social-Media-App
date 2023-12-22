@@ -180,7 +180,9 @@ const setAllPosts = () => {
                               post.likes.length
                             }</p>
                         </div>
-                        <div class="flex gap-2">
+                        <div class="flex gap-2" onclick="showComments(${
+                          post.comments[0]
+                        })">
                             <i class="far fa-comment-dots"></i>
                             <p class="text-gray-600 text-sm" id="like-counts">${
                               post.comments.length
@@ -200,7 +202,9 @@ const setAllPosts = () => {
                           }                                                  
                               <p class="">Like</p>
                           </div>
-                          <div title="Comment" class="flex items-center gap-2 cursor-pointer text-[13px] sm:text-[16px]">
+                          <div title="Comment" class="flex items-center gap-2 cursor-pointer text-[13px] sm:text-[16px]" onclick="addComment(${
+                            post.id
+                          })">
                               <i class="far fa-comment-dots"></i>
                               <p class="">Comment</p>
                           </div>
@@ -340,6 +344,35 @@ const postLiked = (postId) => {
   localStorage.setItem("posts", JSON.stringify(allPosts));
 
   setAllPosts();
+};
+
+// Add Comment
+
+const addComment = (postId) => {
+  const userComment = prompt("add Comment");
+
+  const allPosts = JSON.parse(localStorage.getItem("posts"));
+
+  const postToComment = allPosts.find((post) => {
+    if (post.id == postId) return post;
+  });
+
+  const postCommentSchema = {
+    username: currentUser.username,
+    commentContent: userComment,
+  };
+
+  postToComment.comments.push(postCommentSchema);
+
+  localStorage.setItem("posts", JSON.stringify(allPosts));
+
+  setAllPosts();
+};
+
+// get All Comments of the specific post
+
+const showComments = (postComments) => {
+  console.log(postComments);
 };
 
 document.getElementById("post-btn").addEventListener("click", setPost);
